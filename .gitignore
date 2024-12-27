@@ -1,8 +1,5 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# Ignorer pom.xml 
+/pom.xml
 
 ### STS ###
 .apt_generated
@@ -21,20 +18,10 @@ target/
 
 ### NetBeans ###
 /nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+...
 
 ### VS Code ###
 .vscode/
 
-
-# Ignorer le fichier application.properties contenant des informations sensibles
+# Fichiers sensibles
 /src/main/resources/application.properties
-
-# Ignorer le fichier de pom.xml
-/pom.xml
