@@ -40,8 +40,7 @@ public class Administrateur {
         return id;
     }
 
-/*************  ✨ Codeium Command ⭐  *************/
-/******  f1a02cf9-76c6-4507-983a-4e56ce2179ca  *******/
+
     public void setId(Long id) {
         this.id = id;
     }
