@@ -53,6 +53,6 @@ public class AuthService {
         }
 
         // Générer un token JWT
-        return jwtUtil.generateToken(email, "USER"); // Remplacez "USER" par le rôle réel
+        return jwtUtil.generateToken(email, "USER");
     }
 }

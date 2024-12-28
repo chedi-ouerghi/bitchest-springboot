@@ -6,6 +6,7 @@ import tn.springboot.bitshest.entity.Administrateur;
 import tn.springboot.bitshest.repository.AdministrateurRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AdministrateurService {
@@ -13,10 +14,11 @@ public class AdministrateurService {
     @Autowired
     private AdministrateurRepository administrateurRepository;
 
-    public Administrateur createAdministrateur(Administrateur administrateur) {
-        return administrateurRepository.save(administrateur);
+    // Méthode pour récupérer un administrateur par login ID
+    public Optional<Administrateur> findByLoginId(Long loginId) {
+        return administrateurRepository.findByLogin_Id(loginId);
     }
-
+    
     public List<Administrateur> getAllAdministrateurs() {
         return administrateurRepository.findAll();
     }
