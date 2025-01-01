@@ -40,9 +40,9 @@ public class AuthController {
     public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest) {
         try {
             String jwtToken = authService.login(loginRequest.getEmail(), loginRequest.getPassword());
-            return new ResponseEntity<>(jwtToken, HttpStatus.OK);
+            return ResponseEntity.ok(jwtToken);
         } catch (Exception e) {
-            return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Accès non autorisé : " + e.getMessage());
         }
     }
 }

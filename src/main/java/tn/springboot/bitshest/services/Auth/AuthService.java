@@ -1,5 +1,6 @@
 package tn.springboot.bitshest.services.Auth;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import tn.springboot.bitshest.entity.Login;
@@ -20,31 +21,33 @@ public class AuthService {
     @PersistenceContext
     private EntityManager entityManager;
 
-    // Constructeur
     public AuthService(LoginRepository loginRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this.loginRepository = loginRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;
     }
 
-    // Méthode d'inscription avec procédure stockée et hachage
+    @Scheduled(fixedRate = 3600000)
+    public void clearTokenEveryHour() {
+        loginRepository.clearTokens();
+        System.out.println("Tokens ont été réinitialisés pour tous les utilisateurs.");
+    }
+
     @Transactional
     public String register(String nom, String email, String password, String role) {
-        // Hachage du mot de passe
+
         String hashedPassword = passwordEncoder.encode(password);
 
-        // Appel de la procédure stockée
         entityManager.createNativeQuery("CALL LoginProcedure(:email, :nom, :role, :password)")
                 .setParameter("email", email)
                 .setParameter("nom", nom)
                 .setParameter("role", role)
-                .setParameter("password", hashedPassword) 
+                .setParameter("password", hashedPassword)
                 .executeUpdate();
 
         return "Inscription réussie avec succès !";
     }
 
-    // Méthode de connexion
     public String login(String email, String password) {
         Login login = loginRepository.findByEmail(email);
 
@@ -52,7 +55,14 @@ public class AuthService {
             throw new RuntimeException("Email ou mot de passe incorrect !");
         }
 
-        // Générer un token JWT
-        return jwtUtil.generateToken(email, "USER");
+        // Génération du token JWT après une connexion réussie
+        String token = jwtUtil.generateToken(email, login.getRole().name());
+
+        // Mettre à jour l'entité avec le token généré
+        login.setToken(token);
+        loginRepository.save(login);
+
+        return token;
     }
+
 }

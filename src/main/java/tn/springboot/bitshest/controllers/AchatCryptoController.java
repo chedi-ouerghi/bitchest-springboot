@@ -15,6 +15,8 @@ public class AchatCryptoController {
     private AchatCryptoService achatCryptoService;
 
     // valider
+// quantit = montant/prix actuel
+ 
     @PostMapping("/acheter")
     public ResponseEntity<String> acheterCrypto(
             @RequestParam Long clientId,

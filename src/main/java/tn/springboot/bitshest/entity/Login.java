@@ -26,6 +26,9 @@ public class Login {
     @Column(nullable = false)
     private String password;
 
+    @Column(nullable = true)
+    private String token; 
+
     // Getters et Setters
     public Long getId() {
         return id;
@@ -65,5 +68,14 @@ public class Login {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    // Getter et Setter pour le token
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

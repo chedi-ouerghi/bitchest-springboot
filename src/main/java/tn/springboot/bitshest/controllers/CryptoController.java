@@ -20,6 +20,8 @@ public class CryptoController {
     private CryptoService cryptoService;
 
     // valider
+
+    // p_detailecryptomoney_id; -- v_prix = 67500.50 //  v vente=p quantite×v prix => -- v_vente = 0.01 * 67500.50 = 675.005 // v nouveau solde=v solde+v vente =>-- v_nouveau_solde = 500 + 675.005 = 1175.005 
     @PostMapping("/vendre")
     public ResponseEntity<String> vendreCrypto(
             @RequestParam Long clientId,
