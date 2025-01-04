@@ -69,4 +69,28 @@ public class CryptoController {
         }
         return ResponseEntity.ok(details);
     }
+
+
+    @PostMapping("/add")
+    public ResponseEntity<?> addCrypto(@RequestParam String cryptoId) {
+        String message = cryptoService.addCrypto(cryptoId);
+        return ResponseEntity.ok().body(new ResponseMessage(message));
+    }
+
+    public static class ResponseMessage {
+        private String message;
+
+        public ResponseMessage(String message) {
+            this.message = message;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+    }
+    
 }

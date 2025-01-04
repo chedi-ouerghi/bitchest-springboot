@@ -8,6 +8,7 @@ C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\entity\Cl
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\controllers\AdministrateurController.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\controllers\TransactionsController.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\services\CryptoService.java
+C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\config\JwtAuthenticationFilter.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\repository\DetailecryptomoneyRepository.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\repository\PortefeuilleRepository.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\services\CryptoMonnaieApiResponse.java
@@ -28,12 +29,14 @@ C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\entity\Ro
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\repository\TransactionsRepository.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\config\SecurityConfig.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\repository\ClientRepository.java
+C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\config\GlobalExceptionHandler.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\controllers\CryptoController.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\services\PortefeuilleService.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\BitshestApplication.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\config\JacksonConfig.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\services\AchatCryptoService.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\entity\Cryptomoney.java
+C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\entity\dto\CryptoRequest.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\services\ClientService.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\ServletInitializer.java
 C:\Users\chedi\Desktop\springboot\src\main\java\tn\springboot\bitshest\entity\Administrateur.java
